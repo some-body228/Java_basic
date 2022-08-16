@@ -37,7 +37,7 @@ public class HomeWork {
                         sc.next();
                     }
                 }
-                if(answer > 0 && answer <= 4 ){
+                if(answer > 0 && answer <= rightQuesion.length + 1 ){
                     if (rightQuesion[i] == answer - 1){
                         result++;
                     }
