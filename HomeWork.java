@@ -1,24 +1,21 @@
-import java.util.Base64;
-import java.util.Scanner;
+import java.util.*;
 
 public class HomeWork {
     public static void main(String[] args) {
-        Questions questions = new Questions();
-        questions.setQuestions(new String[]{"Правильный ответ 2",
-                "Правильный ответ 3",
-                "Правильный ответ 3",
-                "Правильный ответ 1",
-                "Правильный ответ 4"});
-
-        questions.setAnswerOptions(new String[][]{{"Не правильный ответ","Правильный ответ","Не правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"},
-                {"Правильный ответ","Не правильный ответ","Не правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"}});
-
-        questions.setRightQuestion(new int[]{1, 2, 2, 0, 3});
-        Quiz quiz = new Quiz();
-        quiz.setQuestions(questions);
-        System.out.println(quiz.executeQuiz());
+        // сортировка выбором
+        int[] list= new int[]{1, 3, 5, 5, 6, 1, 5, 1, 3};
+        for (int i = 0; i < list.length; i++) {
+            int Nmin = i;
+            int min = list[i];
+            for (int j = i+1; j < list.length; j++) {
+                if(min > list[j]){
+                    min = list[j];
+                    Nmin = j;
+                }
+            }
+            list[Nmin] = list[i];
+            list[i] = min;
+        }
+        System.out.println(Arrays.toString(list));
     }
 }
