@@ -1,24 +1,54 @@
-import java.util.Base64;
-import java.util.Scanner;
-
 public class HomeWork {
     public static void main(String[] args) {
-        Questions questions = new Questions();
-        questions.setQuestions(new String[]{"Правильный ответ 2",
-                "Правильный ответ 3",
-                "Правильный ответ 3",
-                "Правильный ответ 1",
-                "Правильный ответ 4"});
+        Answer[] answers1 = new Answer[]{
+                new Answer("Не правильный ответ"),
+                new Answer("Правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+        };
+        TestElement testElement1 = new TestElement(answers1, 1, "Правильный ответ 2");
 
-        questions.setAnswerOptions(new String[][]{{"Не правильный ответ","Правильный ответ","Не правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"},
-                {"Правильный ответ","Не правильный ответ","Не правильный ответ","Не правильный ответ"},
-                {"Не правильный ответ","Не правильный ответ","Правильный ответ","Не правильный ответ"}});
+        Answer[] answers2 = new Answer[]{
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Правильный ответ"),
+                new Answer("Не правильный ответ"),
+        };
+        TestElement testElement2 = new TestElement(answers2, 2, "Правильный ответ 3");
 
-        questions.setRightQuestion(new int[]{1, 2, 2, 0, 3});
-        Quiz quiz = new Quiz();
-        quiz.setQuestions(questions);
-        System.out.println(quiz.executeQuiz());
+        Answer[] answers3 = new Answer[]{
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Правильный ответ"),
+                new Answer("Не правильный ответ"),
+        };
+        TestElement testElement3 = new TestElement(answers3, 2, "Правильный ответ 3");
+
+        Answer[] answers4 = new Answer[]{
+                new Answer("Правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+        };
+        TestElement testElement4 = new TestElement(answers4, 0, "Правильный ответ 4");
+
+        Answer[] answers5 = new Answer[]{
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Не правильный ответ"),
+                new Answer("Правильный ответ"),
+        };
+        TestElement testElement5 = new TestElement(answers5, 3, "Правильный ответ 1");
+
+        Test test = new Test(new TestElement[]{
+                testElement1,
+                testElement2,
+                testElement3,
+                testElement4,
+                testElement5
+        }, 5);
+
+        test.passTest();
+
     }
 }
