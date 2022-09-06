@@ -1,10 +1,10 @@
-public class Test implements UserOutput {
+public class Test {
     private final TestElement[] questions;
-    private final Integer rightAnswersCount;
 
-    public Test(TestElement[] questions, Integer rightAnswersCount) {
+    private final UserOutput userOutput = new ConsoleUserOutput();
+
+    public Test(TestElement[] questions) {
         this.questions = questions;
-        this.rightAnswersCount = rightAnswersCount;
     }
 
     public void passTest(){
@@ -14,11 +14,6 @@ public class Test implements UserOutput {
                 result++;
             }
         }
-            System.out.println("резуьтат " + result + " из " + rightAnswersCount);
-    }
-
-    @Override
-    public void print(String message) {
-        System.out.println(message);
+        userOutput.print("резуьтат " + result + " из " + questions.length);
     }
 }

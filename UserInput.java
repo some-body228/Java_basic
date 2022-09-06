@@ -1,3 +1,3 @@
 public interface UserInput {
-    Integer read();
+    Integer read(int minValue, int maxValue);
 }

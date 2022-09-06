@@ -46,7 +46,7 @@ public class HomeWork {
                 testElement3,
                 testElement4,
                 testElement5
-        }, 5);
+        });
 
         test.passTest();
 
