@@ -1,8 +1,7 @@
 import java.util.*;
 
 public class HomeWork {
-    public static void main(String[] args) {
-        List<Account> accounts1 = new ArrayList<>(Arrays.asList(
+    public static void main(String[] args) {List<Account> accounts1 = new ArrayList<>(Arrays.asList(
                 new Account(1),
                 new Account(2),
                 new Account(3)
@@ -40,8 +39,10 @@ public class HomeWork {
                 new Client("четвертый", 24),
                 accounts4
         );
+        HashMap<Account, Client> accounts = new HashMap<>();
+        clients.forEach((client, accountList) -> accountList.forEach(account -> accounts.put(account, client)));
 
-        Bank bank = new Bank(clients);
+        Bank bank = new Bank(clients, accounts);
 
         System.out.println(bank.findClient(accounts2.get(2)).toString());
         System.out.println(bank.findClient(accounts2.get(1)).toString());
